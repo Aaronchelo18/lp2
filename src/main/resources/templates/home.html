@@ -15,7 +15,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
             <div class="row text-center">
                 <div class="col-lg-3 col-md-6 mb-4" th:each="product: ${products}">
                     <div class="card h-100">
-                        <img class="card-img-top" th:src="@{images/{img} (img = ${product.image})}" alt="alt"/>
+                        <img class="card-img-top" th:src="@{images/{img} (img = ${product.image})}" alt="Imagen"/>
                         <div class="card-body">
                             <p class="card-text"th:text="${product.name}"> Nombre del producto</p>  
                         </div>
@@ -25,7 +25,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
                     </div> 
                 </div>
             </div>
-
+       
 
         </div>
     
