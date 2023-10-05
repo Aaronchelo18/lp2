@@ -4,12 +4,22 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to c
 Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this template
 -->
 <html xmlns:th="http://www.thymeleaf.org">
-    <head th:insert ="~{admin/template_admin::head_admin}"></head>
+    <head th:insert ="~{admin/template_admin::head_admin}">
+    </head>
     <body>
+        
     <div th:insert ="~{admin/template_admin::header_admin}"></div>
    <div class="container">
-            <header class="jumbotron my-4">
-                <h1 class="display-3">Bienvenido a tu tienda en linea!!! </h1> 
+       
+       <pre>
+           
+
+       </pre>
+       
+       <a class="btn btn-primary" th:href="@{/admin/productos/create}"> Crear producto </a>
+       
+       
+            <h1 class="display-3"> Inventario: </h1> 
             </header>
 
        
@@ -38,16 +48,14 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
        </tbody>
    </table>
        
-       
-       
-       
-
         </div>
     
-    </body>
     <div class="footer" th:insert ="~{admin/template_admin::footer_admin}"></div>
-</html>
+    
+    </body>
+
 <style>
+    
      .body{
             position: relative;
         }
@@ -59,3 +67,5 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
         }
         
 </style>
+
+</html>
