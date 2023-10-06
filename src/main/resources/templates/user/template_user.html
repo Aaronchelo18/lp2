@@ -4,14 +4,16 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to c
 Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this template
 -->
 <html xmlns:th="http://www.thymeleaf.org">
-    <head th:fragment ="head">
-        <title>Ecommerce</title>
+    <head th:fragment ="head_user">
+        <title>Ecommerce-home</title>
+        <link rel="icon" href="../../../../../images/Icono de la pestaña.png" type="image/jpeg">
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link th:href="@{/css/bootstrap.min.css}" rel="stylesheet">
     </head>
     <body>
-        <div th:fragment ="header">
+        
+        <div th:fragment ="header_user">
             <nav class="navbar navbar-expand-lg bg-success">
                 <div class="container-fluid">
                     <a class="navbar-brand text-white" href="#">Home</a>
@@ -28,6 +30,8 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
                             <ul class="dropdown-menu">
                                 <li><a class="dropdown-item" href="#">Carrito</a></li>
                                 <li><a class="dropdown-item" href="#">Mis productos</a></li>
+                                <div class="dropdown-divider"></div>
+                                <li><a class="dropdown-item" href="../login/template_login.html">Login</a></li>
                             </ul>
                         </li>
                     </ul>
@@ -40,7 +44,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
             </nav>
         </div>
     </body>
-    <div th:fragment ="footer">
+    <div th:fragment ="footer_user">
         <footer class="footer py-3 bg-success">
             <div class="container">
                 <p class="m-0 text-center text-white"> Curso LP Copyright &copy; Jald 2023</p> 

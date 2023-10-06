@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this template
+-->
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:insert="~{user/template_user::head_user}">
+</head>
+<body>
+
+<div th:insert="~{user/template_user::header_user}">
+</div>
+
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <!-- Contenido específico de la página home_login -->
+            <h1 class="display-4">¡Bienvenido a la página de inicio!</h1>
+            <!-- Puedes agregar contenido adicional aquí, como productos destacados, noticias, etc. -->
+        </div>
+    </div>
+</div>
+
+<div th:insert="~{user/template_login::footer_user}">
+    <!-- Footer común a todas las páginas -->
+</div>
+
+</body>
+
+<style>
+    /* Estilos específicos para esta página */
+</style>
+
+</html>
+

@@ -24,8 +24,6 @@ public class HomeController {
         this.productService = productService;
     }
     
-    
-    
     @GetMapping
     public String home(Model model){
         
