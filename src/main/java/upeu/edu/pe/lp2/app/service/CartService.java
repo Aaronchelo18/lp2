@@ -8,12 +8,15 @@ import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+import org.springframework.stereotype.Service;
 import upeu.edu.pe.lp2.app.domain.ItemCart;
 
 /**
  *
  * @author Aarón López
  */
+
+@Service
 public class CartService {
     
     private List<ItemCart> itemCarts;
@@ -62,5 +65,9 @@ public class CartService {
     public void removeAllItemCart() {
         itemCartHashMap.clear();
         itemCarts.clear();
+    }
+
+    public List<ItemCart> getProductosEnCarrito() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 }
