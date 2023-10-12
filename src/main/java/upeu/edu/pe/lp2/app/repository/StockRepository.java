@@ -12,6 +12,7 @@ import upeu.edu.pe.lp2.infrastructure.entity.StockEntity;
  *
  * @author Aarón López
  */
+
 public interface StockRepository {
     
     StockEntity saveStock(StockEntity stockEntity);

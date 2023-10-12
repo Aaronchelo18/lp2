@@ -11,6 +11,7 @@ import upeu.edu.pe.lp2.infrastructure.entity.UserEntity;
  *
  * @author Aarón López
  */
+
 public interface ProductRepository {
     
     //Lista de todos los productos

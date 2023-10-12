@@ -10,6 +10,7 @@ import jakarta.persistence.*;
  *
  * @author Aarón López
  */
+
 @Entity
 @Table(name = "detallesOrden")
 public class OrderDetailsEntity {
