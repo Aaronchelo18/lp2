@@ -5,6 +5,7 @@
 package upeu.edu.pe.lp2.infrastructure.entity;
 
 import jakarta.persistence.*;
+
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 import java.util.UUID;
@@ -13,12 +14,12 @@ import java.util.UUID;
  *
  * @author Aarón López
  */
-@Entity
-@Table(name = "products")
-public class ProductEntity {
 
+@Entity
+@Table (name = "products")
+public class ProductEntity {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue (strategy = GenerationType.IDENTITY)
     private Integer id;
     private String code;
     private String name;
@@ -26,22 +27,16 @@ public class ProductEntity {
     private String image;
     private BigDecimal price;
 
-    private LocalDateTime dateCreated;
-    private LocalDateTime dateUpdated;
-
-    //Muchos a one
+    private LocalDateTime dataCreated;
+    private LocalDateTime dataUpdated;
     @ManyToOne
-
-    //Columnas
     @JoinColumn(name = "user_id")
     private UserEntity userEntity;
 
-    //Constructor vacío 
     public ProductEntity() {
         this.setCode(UUID.randomUUID().toString());
     }
 
-    //Método Getter and Setter 
     public Integer getId() {
         return id;
     }
@@ -90,20 +85,20 @@ public class ProductEntity {
         this.price = price;
     }
 
-    public LocalDateTime getDateCreated() {
-        return dateCreated;
+    public LocalDateTime getDataCreated() {
+        return dataCreated;
     }
 
-    public void setDateCreated(LocalDateTime dateCreated) {
-        this.dateCreated = dateCreated;
+    public void setDataCreated(LocalDateTime dataCreated) {
+        this.dataCreated = dataCreated;
     }
 
-    public LocalDateTime getDateUpdated() {
-        return dateUpdated;
+    public LocalDateTime getDataUpdated() {
+        return dataUpdated;
     }
 
-    public void setDateUpdated(LocalDateTime dateUpdated) {
-        this.dateUpdated = dateUpdated;
+    public void setDataUpdated(LocalDateTime dataUpdated) {
+        this.dataUpdated = dataUpdated;
     }
 
     public UserEntity getUserEntity() {
@@ -113,10 +108,4 @@ public class ProductEntity {
     public void setUserEntity(UserEntity userEntity) {
         this.userEntity = userEntity;
     }
-
-    @Override
-    public String toString() {
-        return "ProductEntity{" + "id=" + id + ", code=" + code + ", name=" + name + ", description=" + description + ", image=" + image + ", price=" + price + ", dateCreated=" + dateCreated + ", dateUpdated=" + dateUpdated + ", userEntity=" + userEntity + '}';
-    }
-
 }

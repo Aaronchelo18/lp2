@@ -21,12 +21,12 @@ import upeu.edu.pe.lp2.infrastructure.entity.UserEntity;
 
 @Controller
 @RequestMapping("/api/v1/product/")
-public class ProductControllerApi {
+public class ProductoControllerApi {
 
     private final ProductService productService;
-    private final Logger log = LoggerFactory.getLogger(ProductControllerApi .class);
+    private final Logger log = LoggerFactory.getLogger(ProductoControllerApi.class);
 
-    public ProductControllerApi(ProductService productService) {
+    public ProductoControllerApi(ProductService productService) {
         this.productService = productService;
     }
 
@@ -39,7 +39,7 @@ public class ProductControllerApi {
     @PostMapping("/save-product")
     public String saveProduct(ProductEntity product,@RequestParam("img")MultipartFile multipartFile) throws IOException {
         log.info("Nombre de producto: {}", product);
-        productService.saveProduct(product, multipartFile);
+        productService.savProduct(product, multipartFile);
         return "admin/products/create";
         //return "redirect:/admin";
     }

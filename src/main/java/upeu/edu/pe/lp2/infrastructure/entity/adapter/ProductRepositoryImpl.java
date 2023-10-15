@@ -9,24 +9,15 @@ import upeu.edu.pe.lp2.app.repository.ProductRepository;
 import upeu.edu.pe.lp2.infrastructure.entity.ProductEntity;
 import upeu.edu.pe.lp2.infrastructure.entity.UserEntity;
 
-/**
- *
- * @author Aarón López
- */
-
 @Repository
 public class ProductRepositoryImpl implements ProductRepository{
     
     private final ProductCrudRepository productCrudRepository;
-    
-    //Constructor
+
     public ProductRepositoryImpl(ProductCrudRepository productCrudRepository) {
         this.productCrudRepository = productCrudRepository;
     }
-    
 
-    
-    //Métodos abstractos
     @Override
     public Iterable<ProductEntity> getProducts() {
         return productCrudRepository.findAll();
@@ -51,5 +42,4 @@ public class ProductRepositoryImpl implements ProductRepository{
     public void deleteProductById(Integer id) {
         productCrudRepository.deleteById(id);
     }
-    
 }
