@@ -14,7 +14,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
     <body>
         
         <div th:fragment ="header_user">
-            <nav class="navbar navbar-expand-lg" style="background-color: #7E5C4D;">
+            <nav class="navbar navbar-expand-lg" style="background-color: #4A2E1E;">
                 <div class="container-fluid">
                     <a class="navbar-brand text-white" href="#">Home</a>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -44,12 +44,30 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
             </nav>
         </div>
     </body>
+    
+    
     <div th:fragment ="footer_user">
-        <footer class="footer py-3" style="background-color: #8F6B5A;">
+        <footer class="footer py-3" style="background-color: #4A2E1E;"> 
             <div class="container">
                 <p class="m-0 text-center text-white"> Curso LP Copyright &copy; Jald 2023</p> 
                 <script th:src="@{/js/bootstrap.bundle.min.js}"></script>
             </div>
         </footer>
     </div>
+    
+    <style>
+
+        .body{
+            position: relative;
+        }
+        .footer{
+            position: absolute;
+            bottom:0px;
+            height: 160px;
+            width: 100%;
+        }
+
+    </style>
+    
+    
 </html>

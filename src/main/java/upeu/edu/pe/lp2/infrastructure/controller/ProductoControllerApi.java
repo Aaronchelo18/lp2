@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package upeu.edu.pe.lp2.infrastructure.entity.controller;
+package upeu.edu.pe.lp2.infrastructure.controller;
 
 import org.slf4j.*;
 import org.springframework.stereotype.Controller;
@@ -20,7 +20,7 @@ import upeu.edu.pe.lp2.infrastructure.entity.UserEntity;
  */
 
 @Controller
-@RequestMapping("/api/v1/product/")
+@RequestMapping("/admin/products")
 public class ProductoControllerApi {
 
     private final ProductService productService;
@@ -37,12 +37,19 @@ public class ProductoControllerApi {
     }
     //guardar producto
     @PostMapping("/save-product")
-    public String saveProduct(ProductEntity product,@RequestParam("img")MultipartFile multipartFile) throws IOException {
+    public String saveProduct(ProductEntity product, @RequestParam("img") MultipartFile multipartFile) throws IOException {
         log.info("Nombre de producto: {}", product);
         productService.savProduct(product, multipartFile);
-        return "admin/products/create";
-        //return "redirect:/admin";
+
+        // Agregar un retraso de 1 segundo (1000 milisegundos) antes de redirigir
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        return "redirect:/admin";
     }
+
 
     @GetMapping("/show")
     public String showProduct(Model model){
@@ -66,6 +73,6 @@ public class ProductoControllerApi {
     @GetMapping("/delete/{id}")
     public String deleteProduct(@PathVariable Integer id){
         productService.deleteProductById(id);
-        return "redirect:/admin/products/show";
+        return "redirect:/admin";
     }
 }
