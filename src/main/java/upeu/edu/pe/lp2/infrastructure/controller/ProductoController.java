@@ -21,12 +21,12 @@ import upeu.edu.pe.lp2.infrastructure.entity.UserEntity;
 
 @Controller
 @RequestMapping("/admin/products")
-public class ProductoControllerApi {
+public class ProductoController {
 
     private final ProductService productService;
-    private final Logger log = LoggerFactory.getLogger(ProductoControllerApi.class);
+    private final Logger log = LoggerFactory.getLogger(ProductoController.class);
 
-    public ProductoControllerApi(ProductService productService) {
+    public ProductoController(ProductService productService) {
         this.productService = productService;
     }
 

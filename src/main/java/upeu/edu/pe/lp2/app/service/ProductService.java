@@ -64,4 +64,21 @@ public class ProductService {
     public void deleteProductById(Integer id){
         productRepository.deleteProductById(id);
     }
+     public ProductEntity savProductApi(ProductEntity product) throws IOException {
+        if (product.getId() == null){
+            UserEntity user = new UserEntity();
+            user.setId(1);
+            product.setDataCreated(LocalDateTime.now());
+            product.setDataUpdated(LocalDateTime.now());
+            product.setUserEntity(user);
+            return productRepository.saveProduct(product);
+        }else{
+            ProductEntity productDB = productRepository.getProductById(product.getId());
+            product.setCode(productDB.getCode());
+            product.setUserEntity(productDB.getUserEntity());
+            product.setDataCreated(productDB.getDataCreated());
+            product.setDataUpdated(LocalDateTime.now());
+            return productRepository.saveProduct(product);
+        }
+    }
 }

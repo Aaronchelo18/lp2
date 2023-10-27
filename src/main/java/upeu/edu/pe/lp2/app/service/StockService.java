@@ -13,6 +13,7 @@ import upeu.edu.pe.lp2.infrastructure.entity.ProductEntity;
  *
  * @author Aarón López
  */
+
 public class StockService {
    private final StockRepository  stockRepository;
 
