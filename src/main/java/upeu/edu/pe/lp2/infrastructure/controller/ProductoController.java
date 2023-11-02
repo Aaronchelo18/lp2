@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package upeu.edu.pe.lp2.infrastructure.controller;
 
 import org.slf4j.*;
@@ -14,11 +10,7 @@ import upeu.edu.pe.lp2.app.service.ProductService;
 import upeu.edu.pe.lp2.infrastructure.entity.ProductEntity;
 import upeu.edu.pe.lp2.infrastructure.entity.UserEntity;
 
-/**
- *
- * @author Aarón López
- */
-
+@CrossOrigin(origins = "http://localhost/4200")
 @Controller
 @RequestMapping("/admin/products")
 public class ProductoController {
@@ -39,7 +31,7 @@ public class ProductoController {
     @PostMapping("/save-product")
     public String saveProduct(ProductEntity product, @RequestParam("img") MultipartFile multipartFile) throws IOException {
         log.info("Nombre de producto: {}", product);
-        productService.savProduct(product, multipartFile);
+        productService.savProductApi(product);
 
         // Agregar un retraso de 1 segundo (1000 milisegundos) antes de redirigir
         try {
@@ -50,12 +42,11 @@ public class ProductoController {
         return "redirect:/admin";
     }
 
-
     @GetMapping("/show")
     public String showProduct(Model model){
         //log.info("id user desde la variable de session: {}");
-        UserEntity user = new UserEntity();
-        user.setId(1);
+        UserEntity user = new UserEntity()
+;        user.setId(1);
         Iterable<ProductEntity> products = productService.getProductsByUser(user);
         model.addAttribute("products", products);
         return "admin/products/show";
