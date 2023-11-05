@@ -13,7 +13,8 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
                 
 
             </pre>
-            <h1>Actualizar Producto:</h1>
+            <h1 class="display-3" style="font-family: 'Arial', sans-serif; font-size: 36px; font-weight: bold; text-transform: uppercase; color: #333; text-shadow: 2px 2px 4px #888; margin: 0;">Actualizar Producto:</h1>
+
 
             <pre>
             </pre>
@@ -43,10 +44,16 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
 
                 <div class="form-group">
                     <label class="control-label col-sm-2 h5 font-weight-bold" for="price">Precio:</label>
-                    <div class="col-sm-10">          
-                        <input type="number" class="form-control" step="any"  id="price" name="price" placeholder="Ingrese el precio del producto" th:value="${product.price}" required autocomplete="off">
+                    <div class="col-sm-10">
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">S/.</span>
+                            </div>
+                            <input type="number" class="form-control" step="any" id="price" name="price" placeholder="Ingrese el precio del producto" th:value="${product.price}" required autocomplete="off">
+                        </div>
                     </div>
                 </div>
+
 
                 <pre>
                 </pre>
@@ -99,19 +106,19 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
                             }
         </script>
 
-</div>
-<div class="footer" th:insert = "~{admin/template_admin::footer_admin}"></div>
-<style>
-    .body{
-        position: relative;
-    }
-    .footer{
-        position: absolute;
-        bottom:0px;
-        height: 60px;
-        width: 100%;
-    }
-</style>
+    </div>
+    <div class="footer" th:insert = "~{admin/template_admin::footer_admin}"></div>
+    <style>
+        .body{
+            position: relative;
+        }
+        .footer{
+            position: absolute;
+            bottom:0px;
+            height: 60px;
+            width: 100%;
+        }
+    </style>
 
-    </body>
+</body>
 </html>
