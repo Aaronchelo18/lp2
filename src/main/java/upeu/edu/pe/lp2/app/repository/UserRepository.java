@@ -9,8 +9,9 @@ import upeu.edu.pe.lp2.infrastructure.entity.UserType;
 
 /**
  *
- * @author Luki
+ * @author Aarón López
  */
+
 public interface UserRepository {
     
     UserEntity getUserById(Integer id);

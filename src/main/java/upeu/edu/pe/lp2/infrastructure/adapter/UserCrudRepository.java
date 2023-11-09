@@ -5,14 +5,14 @@
 package upeu.edu.pe.lp2.infrastructure.adapter;
 
 import org.springframework.data.repository.CrudRepository;
-import upeu.edu.pe.lp2.infrastructure.entity.ProductEntity;
 import upeu.edu.pe.lp2.infrastructure.entity.UserEntity;
+import upeu.edu.pe.lp2.infrastructure.entity.UserType;
 
 /**
  *
  * @author Aarón López
  */
 
-public interface ProductCrudRepository extends  CrudRepository<ProductEntity, Integer>{
-            Iterable<ProductEntity> findByUserEntity (UserEntity userEntity);
+public interface UserCrudRepository extends CrudRepository<UserEntity, Integer>{
+    UserEntity findByUserType(UserType user);
 }

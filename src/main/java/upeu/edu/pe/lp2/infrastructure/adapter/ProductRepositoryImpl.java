@@ -1,17 +1,21 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
-package upeu.edu.pe.lp2.infrastructure.adapter;
+ package upeu.edu.pe.lp2.infrastructure.adapter;
 
+import java.util.Optional;
 import org.springframework.stereotype.Repository;
 import upeu.edu.pe.lp2.app.repository.ProductRepository;
+import upeu.edu.pe.lp2.infrastructure.adapter.ProductCrudRepository;
 import upeu.edu.pe.lp2.infrastructure.entity.ProductEntity;
 import upeu.edu.pe.lp2.infrastructure.entity.UserEntity;
 
+ 
+ /**
+ *
+ * @author Aarón López
+ */
+ 
+ 
 @Repository
-public class ProductRepositoryImpl implements ProductRepository{
-    
+public class ProductRepositoryImpl implements ProductRepository {
     private final ProductCrudRepository productCrudRepository;
 
     public ProductRepositoryImpl(ProductCrudRepository productCrudRepository) {
@@ -42,4 +46,11 @@ public class ProductRepositoryImpl implements ProductRepository{
     public void deleteProductById(Integer id) {
         productCrudRepository.deleteById(id);
     }
+
+    @Override
+    public Optional<ProductEntity> getProductByid(Integer id) {
+        return productCrudRepository.findById(id);
+    }
+
+   
 }
