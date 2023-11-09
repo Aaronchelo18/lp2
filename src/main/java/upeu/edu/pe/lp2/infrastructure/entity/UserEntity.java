@@ -1,53 +1,29 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package upeu.edu.pe.lp2.infrastructure.entity;
 
 import jakarta.persistence.*;
+import lombok.Data;
+
 import java.time.LocalDateTime;
 
-/**
- *
- * @author Aarón López
- */
+@Data
 @Entity
-@Table(name = "users")
+@Table (name = "usuarios")
+
 public class UserEntity {
+        @Id
+        @GeneratedValue (strategy = GenerationType.IDENTITY)
+        private Integer id;
+        private String username;
+        private String firtsname;
+        private String lastname;
+        private String email;
+        private String address;
+        private String cellphone;
+        private String password;
+        @Enumerated(EnumType.STRING)
+        private UserType userType;
+        private LocalDateTime dataCreated;
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
-    private String username;
-    private String firstName;
-    private String lastName;
-    private String email;
-    private String address;
-    private String cellphone;
-    private String password;
-    private LocalDateTime dateCreated;
-    @Enumerated(EnumType.STRING)
-    private UserType userType;
-
-    //Constructor vacío
-    public UserEntity() {
-    }
-
-    //Constructor lleno
-    public UserEntity(Integer id, String username, String firstName, String lastName, String email, String address, String cellphone, String password, LocalDateTime dateCreated, UserType userType) {
-        this.id = id;
-        this.username = username;
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.email = email;
-        this.address = address;
-        this.cellphone = cellphone;
-        this.password = password;
-        this.dateCreated = dateCreated;
-        this.userType = userType;
-    }
-
-    //Método Getter and Setter
     public Integer getId() {
         return id;
     }
@@ -64,20 +40,20 @@ public class UserEntity {
         this.username = username;
     }
 
-    public String getFirstName() {
-        return firstName;
+    public String getFirtsname() {
+        return firtsname;
     }
 
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
+    public void setFirtsname(String firtsname) {
+        this.firtsname = firtsname;
     }
 
-    public String getLastName() {
-        return lastName;
+    public String getLastname() {
+        return lastname;
     }
 
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
+    public void setLastname(String lastname) {
+        this.lastname = lastname;
     }
 
     public String getEmail() {
@@ -112,20 +88,27 @@ public class UserEntity {
         this.password = password;
     }
 
-    public LocalDateTime getDateCreated() {
-        return dateCreated;
+    public LocalDateTime getDataCreated() {
+        return dataCreated;
     }
 
-    public void setDateCreated(LocalDateTime dateCreated) {
-        this.dateCreated = dateCreated;
+    public void setDataCreated(LocalDateTime dataCreated) {
+        this.dataCreated = dataCreated;
     }
 
-    public UserType getUserType() {
-        return userType;
+    public UserEntity() {
     }
 
-    public void setUserType(UserType userType) {
-        this.userType = userType;
+    public UserEntity(Integer id, String username, String firtsname, String lastname, String email, String address, String cellphone, String password, LocalDateTime dataCreated) {
+        this.id = id;
+        this.username = username;
+        this.firtsname = firtsname;
+        this.lastname = lastname;
+        this.email = email;
+        this.address = address;
+        this.cellphone = cellphone;
+        this.password = password;
+        this.dataCreated = dataCreated;
     }
-
 }
+
