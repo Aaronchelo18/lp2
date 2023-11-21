@@ -1,19 +1,21 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
-    <head th:insert="~{user/template_user::head_user}"></head>
+    <head th:insert="~{user/template_user::head_user}">
+    </head>
     <body style="background-color: #f5f5dc;">
+        
         <div th:insert="~{user/template_user::header_user}"></div>
+        
         <div class="container">
 
             <pre>
 
             </pre>
-            
             <div class="product-details">
                 <header class="jumbotron my-4">
                     <h1 class="display-3" style="font-family: 'Arial', sans-serif; font-size: 36px; font-weight: bold; text-transform: uppercase; color: #333; text-shadow: 2px 2px 4px #888; margin: 0;">Detalles del Producto:</h1>
                 </header>
-                
+
                 <div class="product-card" style="border-radius: 10px; background-color: #fff; padding: 20px; box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);">
                     <div class="row">
                         <div class="col-md-6">
@@ -34,7 +36,13 @@
                                     <button type="button" class="btn-quantity" id="increaseBtn">+</button>
                                 </div>
                             </div>
-                            <button type="submit" class="btn btn-add-cart">Añadir al Carrito</button>
+                            <br>
+
+                            <form th:action="@{/home/cart}" method="POST">
+                                <input type="hidden" th:name="id" th:value="${producto.id}">
+                                <button type="submit"  class="btn btn-dark" th:action="@{/home/cart}">Añadir al carrito </button>
+                            </form>
+
                         </div>
                     </div>
                 </div>

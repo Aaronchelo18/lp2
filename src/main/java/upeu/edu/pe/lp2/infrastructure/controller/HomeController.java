@@ -10,6 +10,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import upeu.edu.pe.lp2.app.service.ProductService;
 import upeu.edu.pe.lp2.infrastructure.entity.ProductEntity;
 
+
+/**
+ *
+ * @author Aarón López
+ */
+
+
 @Controller
 @RequestMapping("/home")
 public class HomeController {

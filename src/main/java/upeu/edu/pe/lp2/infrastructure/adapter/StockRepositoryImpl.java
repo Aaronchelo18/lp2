@@ -8,7 +8,6 @@ import org.springframework.stereotype.Repository;
 
 import java.util.List;
 import upeu.edu.pe.lp2.app.repository.StockRepository;
-import upeu.edu.pe.lp2.infrastructure.adapter.StockCrudRepository;
 import upeu.edu.pe.lp2.infrastructure.entity.ProductEntity;
 import upeu.edu.pe.lp2.infrastructure.entity.StockEntity;
 

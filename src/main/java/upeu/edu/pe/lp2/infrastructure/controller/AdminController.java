@@ -9,6 +9,12 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import upeu.edu.pe.lp2.app.service.ProductService;
 
+/**
+ *
+ * @author Aarón López
+ */
+
+
 @Controller
 @RequestMapping("/admin")
 public class AdminController {

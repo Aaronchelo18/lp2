@@ -14,13 +14,10 @@ import upeu.edu.pe.lp2.infrastructure.entity.StockEntity;
  */
 public interface StockRepository {
 
-    Iterable<StockEntity> getStock();
-
-    StockEntity getStockByid(Integer id);
-
-    StockEntity saveStock(StockEntity stockEntity);
-
-    List<StockEntity> getStockByProductEntity(ProductEntity productEntity);
-}
+        Iterable<StockEntity> getStock();
+        StockEntity getStockByid(Integer id);
+        StockEntity saveStock(StockEntity stockEntity);
+        List<StockEntity> getStockByProductEntity(ProductEntity productEntity);
+    }
 
 

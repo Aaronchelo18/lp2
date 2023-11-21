@@ -10,6 +10,12 @@ import upeu.edu.pe.lp2.app.service.ProductService;
 import upeu.edu.pe.lp2.infrastructure.entity.ProductEntity;
 import upeu.edu.pe.lp2.infrastructure.entity.UserEntity;
 
+/**
+ *
+ * @author Aarón López
+ */
+
+
 @CrossOrigin(origins = "http://localhost/4200")
 @Controller
 @RequestMapping("/admin/products")
